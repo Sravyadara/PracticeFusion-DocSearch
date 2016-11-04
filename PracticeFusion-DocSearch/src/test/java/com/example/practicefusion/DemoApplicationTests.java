@@ -23,6 +23,12 @@ public class DemoApplicationTests {
 		FilterDoctor search = new FilterDoctor();
 		List<Doctor> l = search.processRequest(d);
 		assertTrue(l.size()==5);
+		
+		//negative test case with negative input
+		Doctor doc = new Doctor().withAge(-2);
+		FilterDoctor search1 = new FilterDoctor();
+		List<Doctor> list = search1.processRequest(doc);
+		assertTrue(list.size()==7);
 	}
 	
 	@Test
@@ -57,6 +63,16 @@ public class DemoApplicationTests {
 		FilterDoctor search = new FilterDoctor();
 		List<Doctor> l = search.processRequest(d);
 		assertTrue(l.size()==3);
+		
+	}
+	
+	@Test
+	public void filterByReviewScore(){
+		//passing negative value as input
+		Doctor d = new Doctor().withReviewScore(-20);
+		FilterDoctor search = new FilterDoctor();
+		List<Doctor> l = search.processRequest(d);
+		assertTrue(l.size()==7);
 		
 	}
 	

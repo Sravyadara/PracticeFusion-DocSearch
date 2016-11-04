@@ -104,8 +104,9 @@ public class Doctor {
 	public int getReviewScore() {
 		return reviewScore;
 	}
-	public void setReviewScore(int reviewScore) {
+	public Doctor withReviewScore(int reviewScore) {
 		this.reviewScore = reviewScore;
+		return this;
 	}
 	
 

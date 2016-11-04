@@ -57,9 +57,9 @@ public class FilterDoctor {
 	}
 
 	// Filter the list based on the age factor from input
-	
+	//If input is negative entire list is returned
     public List<Doctor> filterBasedOnAge(List<Doctor> list, Doctor d){
-    	if(d.getAge()  == 0){
+    	if(d.getAge()  <= 0){
         	return list;
     	}
     	int range = 5;
@@ -109,9 +109,9 @@ public class FilterDoctor {
     }
     
   // Filter the list based on the review score from input
-	
+  //If input is negative entire list is returned
     public List<Doctor> filterBasedOnReviewScore(List<Doctor> list, Doctor d){
-    	if(d.getReviewScore() == 0){
+    	if(d.getReviewScore() <= 0){
     		return list;
     	}
     	List<Doctor> scoreDoctors = new ArrayList<Doctor>();
